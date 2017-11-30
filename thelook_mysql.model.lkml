@@ -7,6 +7,7 @@ include: "*.view"
 include: "*.dashboard"
 
 explore: events {
+  hidden: yes
   join: users {
     type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
@@ -15,6 +16,7 @@ explore: events {
 }
 
 explore: inventory_items {
+  hidden: yes
   join: products {
     type: left_outer
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
@@ -56,11 +58,14 @@ explore: orders {
   }
 }
 
-explore: products {}
+explore: products {
+  hidden: yes
+}
 
-explore: schema_migrations {}
+explore: schema_migrations {hidden: yes}
 
 explore: user_data {
+  hidden: yes
   join: users {
     type: left_outer
     sql_on: ${user_data.user_id} = ${users.id} ;;
@@ -68,6 +73,6 @@ explore: user_data {
   }
 }
 
-explore: users {}
+explore: users {hidden: yes}
 
-explore: users_nn {}
+explore: users_nn {hidden: yes}
