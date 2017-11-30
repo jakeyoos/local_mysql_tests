@@ -41,8 +41,6 @@ view: order_items {
   measure: count {
     type: count
     drill_fields: [id, inventory_items.id, orders.id]
-    html: <video id="myVideo" controls="" controlslist="nodownload" style="width:310px;height:210px;" preload="none"
-poster="{{ value }}" muted
-src="{{rendered_value}}" type="video/mp4" /> ;;
+
   }
 }
